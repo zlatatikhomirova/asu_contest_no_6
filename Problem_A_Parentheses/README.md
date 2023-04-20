@@ -1,4 +1,4 @@
-# Problem A. Parentheses 
+# Problem A. Brackets 
 
 Given a sequence of N round, square and curly brackets. 
 Find out if it is possible to add numbers and signs of arithmetic operations to it so that a correct arithmetic expression is obtained. 
