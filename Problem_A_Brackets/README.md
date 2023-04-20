@@ -12,6 +12,7 @@ The first line contains the number of brackets N, the second - N characters from
 1. N < 1 or N > 100,000.
 2. N is not an integer.
 3. Any character is not a bracket.
+4. Not enough brackets.
 
 ## Output 
 
