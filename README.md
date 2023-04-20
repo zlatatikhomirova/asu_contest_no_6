@@ -20,7 +20,7 @@ This repository provides solutions to 7 problems in which you need to use abstra
 
 The list of problems is as follows:
 
-1. Problem A. Parentheses
+1. Problem A. Brackets
 2. Problem B. Sorting of wagons
 3. Problem C. Conveyor
 4. Problem D. Histogram
