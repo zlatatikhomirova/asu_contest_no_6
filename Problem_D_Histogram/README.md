@@ -14,8 +14,8 @@ Typically, histograms are used to represent discrete distributions, such as the 
 ## Possible errors and foolproofing
 1. The file may not exist.
 2. The file is empty.
-3. N < 0 or N > 10^6.
-4. h_i not an integer.
+3. N is not an integer or N < 0 or N > 10^6.
+4. h_i is not an integer or h_i < 0 or h_i > 10^9.
 ## Output
 
  Print the area of the largest rectangle in the histogram.
