@@ -87,8 +87,8 @@ int main() {
     *  int N - number of wagons,
     *  int i = 0 - counter for cycle,
     *  int trains_railway2 = 1 - counter of wagons,
-    *  int train - current wagon, 
-    *  int last_train - the wagon in the deadend, 
+    *  int train - current wagon's number, 
+    *  int last_train - the number of the last wagon in the deadend, 
     *  int OK = 1 - if we can sort these wagons, 
     *  int pushed - if we've pushed wagon to the deadend. 
     * 
@@ -97,9 +97,14 @@ int main() {
     struct Stack dead_end; // character stack
     dead_end.Head = NULL; dead_end.Tail = NULL; // first the stack is empty
     int N, i = 0, trains_railway2 = 1, train, last_train, OK = 1, pushed; 
-    scanf("%d", &N);
+    if (scanf("%d", &N) != 1) // if N is not an integer
+        return -1;
+    if ((N < 1) || (N > 100)) // if N is not in its domain
+        return -1;
     while ((i < N) && OK) {
-        scanf("%d", &train); i++;
+        if (scanf("%d", &train) != 1) // if train's number is not an integer
+            return -1; 
+        i++;
         pushed = 0;
         while (!pushed) {
             if (dead_end.Head == NULL) {
