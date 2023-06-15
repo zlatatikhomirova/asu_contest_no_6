@@ -94,7 +94,7 @@ int main() {
     * 
     * Notice, when we say 'train' we mean 'wagon'.
     */ 
-    struct Stack dead_end; // character stack
+    struct Stack dead_end;
     dead_end.Head = NULL; dead_end.Tail = NULL; // first the stack is empty
     int N, i = 0, trains_railway2 = 1, train, last_train, OK = 1, pushed; 
     if (scanf("%d", &N) != 1) // if N is not an integer
