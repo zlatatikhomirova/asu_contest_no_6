@@ -81,24 +81,25 @@ char Pop(struct Stack* S) {
 }
 
 int main() {
-	/*
-	  int N - the number of tests,
+    /*
+    int N - the number of tests,
     int K - the number of containers,
     int i = 0 - counter for cycle,
     int j - counter for cycle,
     int OK - if we can sort these containers,
-    int pushed - if we've pushed container to shop B.
-    double container - the degree of urgency of current container, 
-    double last_sent - the degree of urgency of the last sent to shop B container, 
+    int pushed - if we've pushed container to shop B,
+    int flag - if we haven't sent anything to shop B yet,
+    double container - the degree of urgency of current container,
+    double last_sent - the degree of urgency of the last sent to shop B container,
     double last_container - the degree of urgency of the last sent to stock container;
-	*/
-    FILE* test, ans;
+    */
+    FILE* test, *ans;
     test = fopen("test.txt", "r"); // input file
     ans = fopen("ans.txt", "w"); // output file
     if (test == NULL) // this file does not exist
         return -1;
 
-    int N, K, i = 0, j, OK, pushed;
+    int N, K, i = 0, j, OK, pushed, flag;
     double container, last_sent, last_container;
     struct Stack stock; // stock means warehouse
     stock.Head = NULL; stock.Tail = NULL; // first the stack is empty
@@ -111,7 +112,7 @@ int main() {
             return -1;
         if ((K < 1) || (K > 10000)) // if K is not in its domain
             return -1;
-        j = 0, OK = 1;
+        j = flag = 0, OK = 1;
         while ((j < K) && OK) {
             if (fscanf(test, "%lg", &container) != 1) // if the degree of urgency is not a number
                 return -1; j++;
@@ -129,9 +130,9 @@ int main() {
                         Push(&stock, container);
                         pushed = 1;
                     }
-                    else {
+                    else { // if we've sent containers to the store B and
                         // if the last sent container's degree of urgency is less than the last container's degree of urgency,
-                        if (last_sent > last_container) { // then we can't sort containers
+                        if ((!flag) && (last_sent > last_container)) { // then we can't sort containers
                             OK = 0;
                             break;
                         }
