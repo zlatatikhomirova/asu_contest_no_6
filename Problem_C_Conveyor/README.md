@@ -20,7 +20,7 @@ The first line of the input file contains the number of tests N. This is followe
 2. N < 0 or N is not an integer.
 3. There are fewer than N+1 lines in the file.
 4. K < 1 or K > 10,000, or K is not an integer.
-5. There are fewer than K+1 elements in the line.
+5. There are fewer or more than K+1 elements in the line.
 6. The degree of urgency is not a number.
 
 Note that we do not consider it as an error when there are more than N+1 lines in the file, or more than K containers in the test, explicitly.
