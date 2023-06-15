@@ -116,8 +116,8 @@ int main() {
   if (i < N) // if N in its domain, but there were not enough brackets
     return -1;
   if (OK && (S.Head == NULL))
-    printf("YES");
+    printf("Yes");
   else
-    printf("NO");
+    printf("No");
   return 0;
 }
