@@ -93,7 +93,7 @@ int main() {
     double last_sent - the degree of urgency of the last sent to shop B container,
     double last_container - the degree of urgency of the last sent to stock container;
     */
-    FILE* test, *ans;
+    FILE* test, * ans;
     test = fopen("test.txt", "r"); // input file
     ans = fopen("ans.txt", "w"); // output file
     if (test == NULL) // this file does not exist
@@ -132,7 +132,7 @@ int main() {
                     }
                     else { // if we've sent containers to the store B and
                         // if the last sent container's degree of urgency is less than the last container's degree of urgency,
-                        if ((!flag) && (last_sent > last_container)) { // then we can't sort containers
+                        if (flag && last_sent > last_container) { // then we can't sort containers
                             OK = 0;
                             break;
                         }
